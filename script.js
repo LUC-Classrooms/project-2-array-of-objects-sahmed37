@@ -1,6 +1,6 @@
 /*
  Project 2 - Array of Objects
- Name: 
+ Name: Sofia Ahmed
  Comments: 
  */
 
@@ -11,16 +11,42 @@
 ***/
 
 // Global Variables go here
+var diamond = new Array(50)
+var hearts = new Array(50)// or should I do star?
+var obj1, obj2;
 
 function setup(){
   // this function will run once
   createCanvas(600, 400); // create a 600 x 400 pixel drawing canvas
+  
+  createCanvas(320, 240);
+  obj1 = new Heart(100, 100);
+  obj2 = new Heart(200, 100);
 
-
+  
 }
 
 function draw(){
   background(200); //light gray background
+  //obj1.display();
+  //obj2.display();
+}
+
+function Heart(_x, _y){
+  this.x = _x;
+  this.y = _y;
+  
+  this.display = function(){
+    push()
+    translate(this.x, this.y)
+    fill("red");
+    noStroke();
+    ellipse(0, 0, 5)
+    ellipse(-20, -15, 50, 55)
+    ellipse(20, -15, 50, 55)
+    triangle(-42, 0, 42, 0, 0, 40)
+    pop()
+  }
   
 }
 
