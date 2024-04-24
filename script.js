@@ -11,17 +11,20 @@
 ***/
 
 // Global Variables go here
-var diamond = new Array(50)
-var hearts = new Array(50)// or should I do star?
+var hearts = new Array(50)
 var obj1, obj2;
 
 function setup(){
   // this function will run once
   createCanvas(600, 400); // create a 600 x 400 pixel drawing canvas
   
-  createCanvas(320, 240);
+  //createCanvas(320, 240);
   obj1 = new Heart(100, 100);
   obj2 = new Heart(200, 100);
+
+    //for(let i = 0; i < hearts.length; i++){
+      //hearts[i] = new Heart(random
+    //}
 
   
 }
@@ -35,6 +38,20 @@ function draw(){
 function Heart(_x, _y){
   this.x = _x;
   this.y = _y;
+  this.Xspeed = random(-3, 3);
+  this.Yspeed = random(-3, 3);
+
+  this.move = function(){
+    this.x += this.xSpeed;
+    this.y += this.ySpeed;
+
+    if(this.x < 0 || this.x > width){
+      this.xSpeed *= -1;
+    }
+    if(this.y < 0 || this.y < height){
+      this.ySpeed *= -1;
+    }
+  }
   
   this.display = function(){
     push()
