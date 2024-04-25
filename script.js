@@ -29,7 +29,7 @@ function setup(){
 }
 
 function draw(){
-  background(200); //light gray background
+  background(0, 10, 400, 230); //light gray background
   obj1.display();
   obj1.move();
   obj2.display();
