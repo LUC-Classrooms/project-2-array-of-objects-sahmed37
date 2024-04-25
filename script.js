@@ -22,24 +22,30 @@ function setup(){
   obj1 = new Heart(100, 100);
   obj2 = new Heart(200, 100);
 
-    //for(let i = 0; i < hearts.length; i++){
-      //hearts[i] = new Heart(random
-    //}
-
+    for(let i = 0; i < hearts.length; i++){
+      hearts[i] = new Heart(random(width), random(height));
+    }
   
 }
 
 function draw(){
   background(200); //light gray background
-  //obj1.display();
-  //obj2.display();
+  obj1.display();
+  obj1.move();
+  obj2.display();
+  obj2.move();
 }
+
+  for(let i = 0; i < hearts.length; i++){
+    hearts[i].display();
+  hearts[i].move();
+  }
 
 function Heart(_x, _y){
   this.x = _x;
   this.y = _y;
-  this.Xspeed = random(-3, 3);
-  this.Yspeed = random(-3, 3);
+  this.xSpeed = random(-3, 3);
+  this.ySpeed = random(-3, 3);
 
   this.move = function(){
     this.x += this.xSpeed;
