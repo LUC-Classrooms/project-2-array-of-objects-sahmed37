@@ -11,7 +11,7 @@
 ***/
 
 // Global Variables go here
-var hearts = new Array(50)
+var hearts = new Array(40)
 var obj1, obj2;
 
 function setup(){
@@ -21,6 +21,7 @@ function setup(){
   //createCanvas(320, 240);
   obj1 = new Heart(100, 100);
   obj2 = new Heart(200, 100);
+  
 
     for(let i = 0; i < hearts.length; i++){
       hearts[i] = new Heart(random(width), random(height));
@@ -29,17 +30,17 @@ function setup(){
 }
 
 function draw(){
-  background(0, 10, 400, 230); //light gray background
+  background(0, 10, 400, 230); //dark blue background
   obj1.display();
   obj1.move();
   obj2.display();
   obj2.move();
-}
 
   for(let i = 0; i < hearts.length; i++){
     hearts[i].display();
   hearts[i].move();
   }
+}
 
 function Heart(_x, _y){
   this.x = _x;
